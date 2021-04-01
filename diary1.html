@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="english">
+
+<head>
+    <title>Howard finally got a Wolf</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanalei&family=Raleway&family=Stalinist+One&family=Stick&family=Quicksand&family=Yatra+One&family=Orbitron&family=Train+One&family=Iceberg&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html"><img src="img/logo.jpg" alt="Van Logo"></a>
+        <input type="checkbox" id="menu">
+        <label for="menu" class="menubtn">
+            <i id="open">&#8801</i>
+        </label>
+        <ul>
+            <li id="extra"><label for="menu" class="cancelbtn">
+                    <i id="close">&#10005</i>
+                </label></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="motivations.html">Motivations</a></li>
+            <div class="dropdown">
+                <li>
+                    <a class="dropbtn" href="diary.html">
+                        Work Diary<label for="droparrow" class="dropar"><i>&#957</i></label>
+                    </a>
+                </li>
+                <input type="checkbox" id="droparrow">
+                <div class="dropdown-content">
+                    <a href="diary1.html">Planning</a>
+                    <a href="diary2.html">Deep Clean</a>
+                    <a href="diary3.html">Panel Repair</a>
+                    <a href="diary4.html">Conversion 1</a>
+                    <a href="diary5.html">Conversion 2</a>
+                </div>
+            </div>
+            <div class="dropdown2">
+                <li>
+                    <a class="dropbtn active" href="travelog.html">
+                        Travel Diary<label for="droparrow2" class="dropar"><i>&#957</i></label>
+                    </a>
+                </li>
+                <input type="checkbox" id="droparrow2">
+                <div class="dropdown-content2">
+                    <a href="travelog1.html">ITA/DEU '20</a>
+                </div>
+            </div>
+        </ul>
+    </nav>
+    <img src=img/welding.png class="banner">
+    <div class="width-mod">
+        <h1 class="title">Planning</h1>
+        <h3>Time management</h3>
+        <p>The planning stage of the project commenced essentially as soon as I'd bought the van. I had other work to do
+            so I didn't allow myself to start working on the van itself until I'd finished the other stuff, and even
+            though I didn't in the end, I did use some time initially to make a 3D model based on measurements of the
+            van</p>
+
+        <h3>3D Model</h3>
+        <!-- 2d model viewer info at https://modelviewer.dev/, tried with .fbx format and didn't work but /glb works so just converted it online -->
+        <model-viewer src="img/3dmodel.glb" alt="A 3D model of an astronaut" auto-rotate camera-controls></model-viewer>
+        <p>
+            This viewer doesn't fully show the features of the model, as it doesn't allow textures or for components to
+            be moved within the model such as the fold out table or the slide down shelving cover above it. This is why
+            the cabinet doors look green and all the woods are very odd looking. Below however is a rendered image of
+            the design so you can see the intended colours and textures as well.
+        </p>
+        <img src=img/slidemodel.png class="pan">
+        <p>
+            There are a few variations from this design to my final build, such as the cupboard doors no longer being
+            sliding but hinged, and there being 4 but I was working around the cupboard doors I had available to me that
+            I bought from eBay, and it ended up creating more room in the cupboards which was vital. Other than that
+            though, everything is nearly identical as it was designed here, it was just exactly how I formed joints etc.
+            so that
+            fixings wouldn't show that was left to decide whilst building. There's no point modelling this as that
+            definitely begins to waste your time spent in CAD just becoming overly detailed.
+        </p>
+        <h3>Deciding Dimensions</h3>
+        <p>
+            The best way I found to decide dimensions (such as the necessary chair height, the table height/length, the
+            gap between the cupboards and the gap from the bed to the kitchen cabinet) is simply by sitting in
+            the van with a piece of wood/cardboard propped up there. The 3D model is very useful for laying it all out
+            and getting a vision in your head you can work towards as you know it all works together, but it doesn't
+            help with deciding how low is too low for a sofa, or how much room you need from the seat to the roof to sit
+            comfortably.
+        </p>
+        <h3>Design Variations</h3>
+        <img src=img/foldingin.jpeg class="right-wrap">
+        <p>
+            There was another model I made as well with a bed that folded down instead of sliding out which you can see
+            in the images to the right. It was better because it kept the seating lower so you could have a thicker
+            mattress, the bed was higher so you could look out the windows at the view easier when waking up/going to
+            sleep and the bedding could be put on the little ledge when the bed was folded away. It also pushed the back
+            of the sofa forward and so closer to the table which would likely be an improvement.
+        </p>
+        <img src=img/foldingout.jpeg class="left-wrap">
+        <p>
+            However, it also meant that the mattress would have to be much more complicated, either with two folds or a
+            fold off-centre meaning it couldn't be rotated to stop it getting lop-sided. The biggest reason though was
+            simply the then limited headroom above the bed. The added complication wasn't much of an issue but in
+            hindsight it definitely would have made storage under the bed a lot more complicated/impossible due to all
+            the struts and moving parts.
+        </p>
+        <p>
+            I still think the design could be good, but maybe more useful for a larger van where headroom isn't an issue
+            and storage space can be worked differently.
+        </p>
+    </div>
+    <div class="footer">
+        <div class="footerin">
+            <h3>Author</h3>
+            <p>Website coded, designed and filled by Howard Richards mostly as an exercise to learn HTML/CSS/JS over
+                lockdown but also a handy double use to help show people the van if they're interested in without having
+                to send a ridiculous description and odd amount of photos</p>
+        </div>
+        <div class="footerin">
+            <h3>Site Navigation</h3>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="motivations.html">Motivations</a></li>
+                <li><a href="finances.html">Finances</a></li>
+                <li><a class="dropbtn" href="diary.html">Work Diary</a></li>
+                <li><a class="dropbtn" href="travelog.html">Travel Diary</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

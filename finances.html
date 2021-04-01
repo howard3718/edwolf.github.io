@@ -1,37 +1,981 @@
 <!doctype html>
-<html>
+<html lang="english">
+
 <head>
     <title>Howard finally got a Wolf</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanalei&family=Raleway&family=Stalinist+One&family=Stick&family=Quicksand&family=Yatra+One&family=Orbitron&family=Train+One&family=Iceberg&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <script src="script.js"></script>
 </head>
+
 <body>
     <nav>
-        <img src="img/logo.jpg">
+        <a href="index.html"><img src="img/logo.jpg" alt="Van Logo"></a>
         <input type="checkbox" id="menu">
-                <label for="menu" class="menubtn">
-                    <i id="open">&#8801</i>
-                </label>
+        <label for="menu" class="menubtn">
+            <i id="open">&#8801</i>
+        </label>
         <ul>
             <li id="extra"><label for="menu" class="cancelbtn">
-                <i id="close">&#10005</i>
-            </label></li>
+                    <i id="close">&#10005</i>
+                </label></li>
             <li><a href="index.html">Home</a></li>
             <li><a href="motivations.html">Motivations</a></li>
-            <li><a href="finances.html" class="active">Finances</a></li>
-            <li><a href="diary.html">Work Diary</a></li>
+            <div class="dropdown">
+                <li>
+                    <a class="dropbtn" href="diary.html">
+                        Work Diary<label for="droparrow" class="dropar"><i>&#957</i></label>
+                    </a>
+                </li>
+                <input type="checkbox" id="droparrow">
+                <div class="dropdown-content">
+                    <a href="diary1.html">Planning</a>
+                    <a href="diary2.html">Deep Clean</a>
+                    <a href="diary3.html">Panel Repair</a>
+                    <a href="diary4.html">Conversion 1</a>
+                    <a href="diary5.html">Conversion 2</a>
+                </div>
+            </div>
+            <div class="dropdown2">
+                <li>
+                    <a class="dropbtn active" href="travelog.html">
+                        Travel Diary<label for="droparrow2" class="dropar"><i>&#957</i></label>
+                    </a>
+                </li>
+                <input type="checkbox" id="droparrow2">
+                <div class="dropdown-content2">
+                    <a href="travelog1.html">ITA/DEU '20</a>
+                </div>
+            </div>
         </ul>
     </nav>
-    <div class="banner">
-        <img src=img/tour1.jpg width=100%>
+    <img src=img/tour2.png class="banner">
+    <div class="width-mod">
+        <h1 class="title">Finances</h1>
+        <p><span class="dropcap">B</span>elow is a pretty detailed summary of each of the costs associated with the van,
+            split into three main categories:</p>
+        <ol>
+            <li><strong><em>Repair</em></strong> - costs associated with the intial repair to the wing of the van</li>
+            <li><strong><em>Conversion</em></strong> - all the costs associated with converting the van to a camper</li>
+            <li><strong><em>Running</em></strong> - asociated with simply owning the van (insurance, maintenance etc.)
+            </li>
+        </ol>
+        <p>This is on the off chance you are thinking of a conversion yourself and want a rough guide. It's also why
+            I've kept the costs so granular so you can see exactly where they've come from and those which you might not
+            incur/anything I scavanged for free but you would have to purchase.</p>
+        <div class="container">
+            <div class="accordion">
+                <h3 class="acchead">Bodywork/Repair & Associated Tools</h3>
+                <div class="row">
+                    <div class="item">
+                        <h6><strong>Item</strong></h6>
+                    </div>
+                    <div class="cost">
+                        <h6><strong>Cost</strong></h6>
+                    </div>
+                </div>
+                <div class="row" onclick="accordion(1)">
+                    <div class="item">
+                        <h6>Door & Quarter Trim</h6>
+                    </div>
+                    <div class="plus">
+                        <h6>+</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£90.00</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach1">
+                    New door from minibus and plastic trim for infront of rear wheel
+                </div>
+                <div class="row" onclick="accordion(2)">
+                    <div class="item">
+                        <h6>Insurance to drive home</h6>
+                    </div>
+                    <div class="plus">
+                        <h6>+</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>Free</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach2">
+                    Dad got 24h insurance to drive it home which luckily, they didn't charge as it was so little compared to
+                    dad's policy
+                </div>
+                <div class="row" onclick="accordion(3)">
+                    <div class="item">
+                        <h6>Quarter Panel & Sill</h6>
+                    </div>
+                    <div class="plus">
+                        <h6>+</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£85.00</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach3">
+                    Section cut out from a breaker van to weld on during repair process, whole lower rear panel up to
+                    the
+                    sliding door rail and sill to halfway along door opening
+                </div>
+                <div class="row" onclick="accordion(4)">
+                    <div class="item">
+                        <h6>Rear Glass</h6>
+                    </div>
+                    <div class="plus">
+                        <h6>+</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£91.80</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach4">
+                    New glass for barn doors, initally received 2 left so JustKampers sent another right window free of
+                    charge but didn't ask for left back, so have a spare
+                </div>
+                <div class="row" onclick="accordion(5)">
+                    <div class="item">
+                        <h6>Window Trim</h6>
+                    </div>
+                    <div class="plus">
+                        <h6>+</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£15.09</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach5">
+                    Rubber trim which covers metal edge left from cutting holes for rear windows
+                </div>
+                <div class="row" onclick="accordion(6)">
+                    <div class="item">
+                        <h6>Rear Door Seal</h6>
+                    </div>
+                    <div class="plus">
+                        <h6>+</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£28.14</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach6">
+                    New seal for rear door (old one was covered in plaster and paint)
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Side door seal</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£24.95</h6>
+                    </div>
+                </div>
+                <div class="row" onclick="accordion(7)">
+                    <div class="item">
+                        <h6>Body Filler</h6>
+                    </div>
+                    <div class="plus">
+                        <h6>+</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£8.64</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach7">
+                    First fibreglass body filler with aluminium fibres, bought before plan made to completely replace
+                    rear
+                    panel
+                </div>
+                <div class="row" onclick="accordion(8)">
+                    <div class="item">
+                        <h6>Waxoyl</h6>
+                    </div>
+                    <div class="plus">
+                        <h6>+</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£23.99</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach8">
+                    Waxoyl is the waxy/oil substance that you can spray on metal to stop it from rusting, applied to
+                    inside
+                    and under after painting was finished
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Use of Mark's mig welder</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>Free</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Mig Welding tips & wire</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£9.48</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Sanding Disc for grinder</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£7.68</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Cutting discs (grinder)</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£18.00</h6>
+                    </div>
+                </div>
+                <div class="row" onclick="accordion(9)">
+                    <div class="item">
+                        <h6>Filler Primer</h6>
+                    </div>
+                    <div class="plus">
+                        <h6>+</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£3.55</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach9">
+                    Primer paint specifically for applying on top of filler
+                </div>
+                <div class="row" onclick="accordion(11)">
+                    <div class="item">
+                        <h6>Compressor Paint Gun</h6>
+                    </div>
+                    <div class="plus">
+                        <h6>+</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£71.63</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach11">
+                    New gun for applying non-aerosol paint, wasn't 100% required but improved quality and dad bought it
+                    before I could say no
+                </div>
+                <div class="row" onclick="accordion(12)">
+                    <div class="item">
+                        <h6>Black Panel Glue</h6>
+                    </div>
+                    <div class="plus">
+                        <h6>+</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£9.54</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach12">
+                    Black panel glue for attaching the quarter panel to the wheel arch as apparently that's all that's
+                    used to hold cars together
+                </div>
+                <div class="row" onclick="accordion(13)">
+                    <div class="item">
+                        <h6>Black Spray Paint</h6>
+                    </div>
+                    <div class="plus">
+                        <h6>+</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£6.97</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach13">
+                    Used for rear bumper sub-frame, various metallic clips and ook mechanisms in rear doors
+                </div>
+                <div class="row" onclick="accordion(14)">
+                    <div class="item">
+                        <h6>Filler (cheap)</h6>
+                    </div>
+                    <div class="plus">
+                        <h6>+</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£3.55</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach14">
+                    This is the massive 5L pot of filler that I bought for filling over welded joints
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>More filler & Spray paints</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£16.03</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Cutting Paste</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£7.06</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Sand Paper</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£3.28</h6>
+                    </div>
+                </div>
+                <div class="row" onclick="accordion(26)">
+                    <div class="item">
+                        <h6>Waterproof Connectors</h6>
+                    </div>
+                    <div class="plus">
+                        +
+                    </div>
+                    <div class="cost">
+                        <h6>£19.78</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach26">
+                    Waterproof connectors bought to reconnect back left reversing beeper up as it had been chopped off.
+                    Far more than needed were bought
+                </div>
+                <div class="row" onclick="accordion(15)">
+                    <div class="item">
+                        <h6>Paint & Help Money</h6>
+                    </div>
+                    <div class="plus">
+                        <h6>+</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£100.00</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach15">
+                    The paint cost about £45 for bert but I gave him 100 as he'd told me how to do everything include
+                    helping show me how to weld and given me laquer and fine sandpaper
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>2 interior bulbs</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£0.72</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Seatbelt clasp for rear seat</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£5</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Rear view mirror</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£15</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6><strong>Total</strong></h6>
+                    </div>
+                    <div class="cost">
+                        <h6><strong>£</strong></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion">
+                <h3 class="acchead">Conversion Materials</h3>
+                <div class="row">
+                    <div class="item">
+                        <h6><strong>Item</strong></h6>
+                    </div>
+                    <div class="cost">
+                        <h6><strong>Cost</strong></h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Dad's old van sunroof</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>Free</h6>
+                    </div>
+                </div>
+                <div class="row" onclick="accordion(16)">
+                    <div class="item">
+                        <h6>Autofusion 360</h6>
+                    </div>
+                    <div class="plus">
+                        <h6>+</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>Free</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach16">
+                    CAD software used to model my plans for the van. Luckily free for education and still had access to
+                    IC email address
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Kitchen Cabinet Doors</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£0.99</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Spring Roller Blinds</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£102</h6>
+                    </div>
+                </div>
+                <div class="row" onclick="accordion(17)">
+                    <div class="item">
+                        <h6>Bed/Sofa Fabric</h6>
+                    </div>
+                    <div class="plus">
+                        <h6>+</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£107.64</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach17">
+                    AquaClean Eden Colleciton, recommended by a friend who teaches upholstery as can clean anything off
+                    it with water yet is soft and suede feeling
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Push Release Catches</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£9.99</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Assortment of Springs</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£6.50</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>2x5m LED Light strips</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£25.76</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Sewing Needles</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£6.99</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Foam from old family mattress</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>Free</h6>
+                    </div>
+                </div>
+                <div class="row" onclick="accordion(18)">
+                    <div class="item">
+                        <h6>Recycled Padding</h6>
+                    </div>
+                    <div class="plus">
+                        <h6>+</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>Free</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach18">
+                    Padded material used underneath speaker mesh fabric to soften the metal and give a padded effect.
+                    Taken from the old mattress, material used to soften touch of wire frame and springs
+                </div>
+                <div class="row" onclick="accordion(19)">
+                    <div class="item">
+                        <h6>Speaker Mesh Fabric</h6>
+                    </div>
+                    <div class="plus">
+                        <h6>+</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£42.46</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach19">
+                    Fabric used in the corners and odd shapes of the van between the plywood panels
+                </div>
+
+                <div class="row">
+                    <div class="item">
+                        <h6>2 x Cigarette Lighter & Dual USB ports</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£22.98</h6>
+                    </div>
+                </div>
+                <div class="row" onclick="accordion(20)">
+                    <div class="item">
+                        <h6>Timberboard</h6>
+                    </div>
+                    <div class="plus">
+                        +
+                    </div>
+                    <div class="cost">
+                        <h6>£69.94</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach20">
+                    2 boards of 2000x400x18mm knotty pine furniture board used for kitchen worktop, splashback and
+                    swivel out table
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>18mm Plywood sheet</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£35.47</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Sink waste kit</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£6</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Kitchen cabinet hinges</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£10.52</h6>
+                    </div>
+                </div>
+                <div class="row" onclick="accordion(23)">
+                    <div class="item">
+                        <h6>700mm Plywood Bed Slats</h6>
+                    </div>
+                    <div class="plus">
+                        +
+                    </div>
+                    <div class="cost">
+                        <h6>£38.34</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach23">
+                    First lot of plywood bed slats bought for trip to italy, quite a few broke, the 13 that didn't were
+                    reused on new bed for fixed side
+                </div>
+                <div class="row" onclick="accordion(24)">
+                    <div class="item">
+                        <h6>900mm Plywood Bed Slats</h6>
+                    </div>
+                    <div class="plus">
+                        +
+                    </div>
+                    <div class="cost">
+                        <h6>£29.04</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach24">
+                    Long plywood bed slats as the slats on the sliding side of the bed need to be the width of the
+                    plywood support wider than the fixed side
+                </div>
+                <div class="row" onclick="accordion(25)">
+                    <div class="item">
+                        <h6>Floorboards</h6>
+                    </div>
+                    <div class="plus">
+                        +
+                    </div>
+                    <div class="cost">
+                        <h6>£74.82</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach25">
+                    Goodhome oak effect floorboards, 3 packs, bought as the groove between the boards make them feel far
+                    more authentic and not like laminate
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Electrical Switches</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£6.99</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Gas Struts for Table</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£4.99</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Sewing Thread</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£7.99</h6>
+                    </div>
+                </div>
+                <div class="row" onclick="accordion(27)">
+                    <div class="item">
+                        <h6>Expanding Foam</h6>
+                    </div>
+                    <div class="plus">
+                        +
+                    </div>
+                    <div class="cost">
+                        <h6>£10</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach27">
+                    Expanding foam was used to insulate the top corners of the van that it would be impossible to get
+                    the rockwool into
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>7.5L Magnolia interior paint</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£17.50</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Liquid nails glue</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£3</h6>
+                    </div>
+                </div>
+                <div class="row" onclick="accordion(28)">
+                    <div class="item">
+                        <h6>Louvre vent</h6>
+                    </div>
+                    <div class="plus">
+                        +
+                    </div>
+                    <div class="cost">
+                        <h6>£2.87</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach28">
+                    Vent for fans installed for air intake behind the passenger side rear wheel
+                </div>
+                <div class="row" onclick="accordion(29)">
+                    <div class="item">
+                        <h6>Fans for ambient air flow</h6>
+                    </div>
+                    <div class="plus">
+                        +
+                    </div>
+                    <div class="cost">
+                        <h6>Free</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach29">
+                    Stolen off old computers, used to push air in at night to prevent it becoming stuffy and water
+                    condensing and dampening all the fittings
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Hand saw</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£4.50</h6>
+                    </div>
+                </div>
+                <div class="row" onclick="accordion(30)">
+                    <div class="item">
+                        <h6>Various Wood</h6>
+                    </div>
+                    <div class="plus">
+                        +
+                    </div>
+                    <div class="cost">
+                        <h6>£25</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach30">
+                    Wood from british gates, inc multiple 4.5m lengths of 2x1, flooring batton, 3&6mm plywood sheets
+                    etc. etc.
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>PWM controllers for fan/lights</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£15.98</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Notebook to use as logbook</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£10</h6>
+                    </div>
+                </div>
+                <div class="row" onclick="accordion(31)">
+                    <div class="item">
+                        <h6>Reflective window tint</h6>
+                    </div>
+                    <div class="plus">
+                        +
+                    </div>
+                    <div class="cost">
+                        <h6>£12.49</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach31">
+                    Window tint bought for side window, which is currently perfectly clear, may also install on rear
+                    windows as well however these are already partially tinted
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Mobicool 48L Thermoelectric Coolbox</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£105.22</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Crockery & Cutlery Set</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£34.98</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>4 x 25L Jerry Cans</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£29.99</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Fold up dual gas stove & grill</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£39.90</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6><strong>Total</strong></h6>
+                    </div>
+                    <div class="cost">
+                        <h6><strong>£</strong></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="accordion">
+                <h3 class="acchead">Running Costs</h3>
+                <div class="row">
+                    <div class="item">
+                        <h6><strong>Item</strong></h6>
+                    </div>
+                    <div class="cost">
+                        <h6><strong>Cost</strong></h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Automotive Fuse Set</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£7.01</h6>
+                    </div>
+                </div>
+                <div class="row" onclick="accordion(32)">
+                    <div class="item">
+                        <h6>Engine Oil</h6>
+                    </div>
+                    <div class="plus">
+                        +
+                    </div>
+                    <div class="cost">
+                        <h6>£80</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach32">
+                    Bought a 20L can of oil as cheaper to buy in bulk and likely to change oil annualy/bi-ennially
+                </div>
+                <div class="row" onclick="accordion(33)">
+                    <div class="item">
+                        <h6>Filters</h6>
+                    </div>
+                    <div class="plus">
+                        +
+                    </div>
+                    <div class="cost">
+                        <h6>£30</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach33">
+                    Air, oil and fuel filter for service
+                </div>
+                <div class="row" onclick="accordion(34)">
+                    <div class="item">
+                        <h6>MOT Fixes</h6>
+                    </div>
+                    <div class="plus">
+                        +
+                    </div>
+                    <div class="cost">
+                        <h6>£10</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach34">
+                    New ball joint (£20 and a few hours of will servicing the bolts )
+                </div>
+                <div class="row" onclick="accordion(36)">
+                    <div class="item">
+                        <h6>Fuel cost/tank</h6>
+                    </div>
+                    <div class="plus">
+                        +
+                    </div>
+                    <div class="cost">
+                        <h6>~£80</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach36">
+                    Usually around £80 from light off to full tank, and this does 600+ miles; for reference, Kent-Munich is easily do-able on 1 tank
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6><strong>Total</strong></h6>
+                    </div>
+                    <div class="cost">
+                        <h6><strong>£</strong></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion">
+                <h3 class="acchead">Totals</h3>
+                <div class="row">
+                    <div class="item">
+                        <h6><strong>Item</strong></h6>
+                    </div>
+                    <div class="cost">
+                        <h6><strong>Cost</strong></h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Van</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£1000</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Conversion Costs</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>aaaa</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Running Costs</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>aaa</h6>
+                    </div>
+                </div>
+                <div class="row" onclick="accordion(35)">
+                    <div class="item">
+                        <h6>Insurance</h6>
+                    </div>
+                    <div class="plus">
+                        +
+                    </div>
+                    <div class="cost">
+                        <h6>£1144</h6>
+                    </div>
+                </div>
+                <div class="expand" id="ach35">
+                    This may seem expensive however it's because I have any driver insurance, including U25s. It's also the first insurance policy I've ever had in my name.
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6>Tax</h6>
+                    </div>
+                    <div class="cost">
+                        <h6>£265</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <h6><strong>Total</strong></h6>
+                    </div>
+                    <div class="cost">
+                        <h6><strong>£</strong></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>Hopefully this gives you a little summary and insight into how much it costs</p>
     </div>
-<h1>Howard and his Wolf</h1>
-<h3>The documentation of Howard becoming a full edge person and converting a van</h3>
-<p>The Quick brown fox jumps over the lazy dog</p>
-<img src=img/logo.jpg width=250px>
-<script src="script.js"></script>
+    <div class="footer">
+        <div class="footerin">
+            <h3>Author</h3>
+            <p>Website designed, coded and filled with content by Howard Richards mostly as an exercise to learn HTML/CSS/JS over
+                lockdown but also a handy double use to help show people the van if they're interested in it, without having
+                to send a ridiculous description and find photos to go with it</p>
+        </div>
+        <div class="footerin">
+            <h3>Site Navigation</h3>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="motivations.html">Motivations</a></li>
+                <li><a href="finances.html">Finances</a></li>
+                <li><a class="dropbtn" href="diary.html">Work Diary</a></li>
+                <li><a class="dropbtn" href="travelog.html">Travel Diary</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>

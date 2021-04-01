@@ -1,37 +1,104 @@
 <!doctype html>
-<html>
+<html lang="english">
+
 <head>
     <title>Howard finally got a Wolf</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanalei&family=Raleway&family=Stalinist+One&family=Stick&family=Quicksand&family=Yatra+One&family=Orbitron&family=Train+One&family=Iceberg&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <script src="script.js"></script>
 </head>
+
 <body>
     <nav>
-        <img src="img/logo.jpg">
+        <a href="index.html"><img src="img/logo.jpg" alt="Van Logo"></a>
         <input type="checkbox" id="menu">
-                <label for="menu" class="menubtn">
-                    <i id="open">&#8801</i>
-                </label>
+        <label for="menu" class="menubtn">
+            <i id="open">&#8801</i>
+        </label>
         <ul>
             <li id="extra"><label for="menu" class="cancelbtn">
-                <i id="close">&#10005</i>
-            </label></li>
+                    <i id="close">&#10005</i>
+                </label></li>
             <li><a href="index.html">Home</a></li>
             <li><a href="motivations.html">Motivations</a></li>
-            <li><a href="finances.html">Finances</a></li>
-            <li><a href="diary.html" class="active">Work Diary</a></li>
+            <div class="dropdown">
+                <li>
+                    <a class="dropbtn" href="diary.html">
+                        Work Diary<label for="droparrow" class="dropar"><i>&#957</i></label>
+                    </a>
+                </li>
+                <input type="checkbox" id="droparrow">
+                <div class="dropdown-content">
+                    <a href="diary1.html">Planning</a>
+                    <a href="diary2.html">Deep Clean</a>
+                    <a href="diary3.html">Panel Repair</a>
+                    <a href="diary4.html">Conversion 1</a>
+                    <a href="diary5.html">Conversion 2</a>
+                </div>
+            </div>
+            <div class="dropdown2">
+                <li>
+                    <a class="dropbtn active" href="travelog.html">
+                        Travel Diary<label for="droparrow2" class="dropar"><i>&#957</i></label>
+                    </a>
+                </li>
+                <input type="checkbox" id="droparrow2">
+                <div class="dropdown-content2">
+                    <a href="travelog1.html">ITA/DEU '20</a>
+                </div>
+            </div>
         </ul>
     </nav>
-    <div class="banner">
-        <img src=img/tour1.jpg width=100%>
+    <img src=img/welding.png class="banner">
+    <div class="width-mod">
+        <h1 class="title">Work Diary</h1>
+        <div class="bigcontainer">
+            <div class="bigoptions" onclick="location.href='diary1.html';"  style="background-image:url(img/slidemodel.png);">
+                <h3>Planning</h3>
+                <p>The planning stage of the work, mostly done with a 3D model</p>
+            </div>
+            <div class="bigoptions" onclick="location.href='diary2.html';"  style="background-image:url(img/clean.jpg);">
+                <h3>Deep Clean</h3>
+                <p>Stripping the back out, and disassembling the dash completely in a war on the dust and dirt</p>
+            </div>
+            <div class="bigoptions" onclick="location.href='diary3.html';"  style="background-image:url(img/welding.png);">
+                <h3>Panel Repair</h3>
+                <p>Fixing the huge scrape along the passenger side quarter panel and sill </p>
+            </div>
+            <div class="bigoptions" onclick="location.href='diary4.html';"  style="background-image:url(img/flooring.png);">
+                <h3>Conversion 1</h3>
+                <p>First conversion stage: insulation, flooring, walls & ceiling, lights, fans and electrics</p>
+            </div>
+            <div class="bigoptions" onclick="location.href='diary5.html';"  style="background-image:url(img/welding.png);">
+                <h3>Conversion 2</h3>
+                <p>Second conversion stage: kitchen, bed unit, racking, blinds and doors</p>
+            </div>
+        </div>
     </div>
-<h1>Howard and his Wolf</h1>
-<h3>The documentation of Howard becoming a full edge person and converting a van</h3>
-<p>The Quick brown fox jumps over the lazy dog</p>
-<img src=img/logo.jpg width=250px>
-<script src="script.js"></script>
+    <div class="footer">
+        <div class="footerin">
+            <h3>Author</h3>
+            <p>Website coded, designed and filled by Howard Richards mostly as an exercise to learn HTML/CSS/JS over
+                lockdown but also a handy double use to help show people the van if they're interested in without having
+                to send a ridiculous description and odd amount of photos</p>
+        </div>
+        <div class="footerin">
+            <h3>Site Navigation</h3>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="motivations.html">Motivations</a></li>
+                <li><a href="finances.html">Finances</a></li>
+                <li><a class="dropbtn" href="diary.html">Work Diary</a></li>
+                <li><a class="dropbtn" href="travelog.html">Travel Diary</a></li>
+            </ul>
+        </div>
+        
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
