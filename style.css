@@ -1,3 +1,12 @@
+@viewport{
+  zoom: 1.0;
+  width: extend-to-zoom;
+}
+@-ms-viewport{
+  width: extend-to-zoom;
+  zoom: 1.0;
+}
+
 html{
   overflow-x: hidden;
 }
@@ -355,9 +364,10 @@ h6{
     margin: 0 15px;
   }
   .banner{
-    width: 700px;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
+  }
+  h1.title{
+    font-size: 45px;
   }
   .right-wrap, .left-wrap{
     width:100%
