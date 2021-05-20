@@ -30,14 +30,22 @@ p{
   line-height: 25px;
   margin: 5px 0 10px 0;
 }
+video{
+  margin: 0px 0px 20px 0px;
+}
 .dropcap{
   font-size:25px;
   float:left;
   font-family: 'Yatra One', sans-serif;
 }
-.banner, .pan{
+.banner{
   width: 100%;
   z-index:-1;
+}
+.pan{
+  width: 100%;
+  z-index:-1;
+  margin-bottom:10px;
 }
 model-viewer{
   width:100%;
