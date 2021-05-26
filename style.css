@@ -1,3 +1,12 @@
+@viewport{
+  zoom: 1.0;
+  width: extend-to-zoom;
+}
+@-ms-viewport{
+  width: extend-to-zoom;
+  zoom: 1.0;
+}
+
 html{
   overflow-x: hidden;
 }
@@ -8,11 +17,6 @@ body{
   padding:0;
   font-family: 'Raleway', sans-serif;
 }
-.width-mod{
-  max-width: 75%;
-  margin:auto;
-  margin-top:-100px;
-}
 h1.title{
   font-size: 70px;
   font-family: 'train One', sans-serif;
@@ -20,32 +24,19 @@ h1.title{
   font-weight: lighter;
   font-style: italic;
 }
-h1, h2{
-  margin: 2px -30px;
-}
-h3, h4{
-  margin: 0 -15px;
-}
+
 p{
   line-height: 25px;
   margin: 5px 0 10px 0;
-}
-video{
-  margin: 0px 0px 20px 0px;
 }
 .dropcap{
   font-size:25px;
   float:left;
   font-family: 'Yatra One', sans-serif;
 }
-.banner{
+.banner, .pan{
   width: 100%;
   z-index:-1;
-}
-.pan{
-  width: 100%;
-  z-index:-1;
-  margin-bottom:10px;
 }
 model-viewer{
   width:100%;
@@ -57,6 +48,11 @@ model-viewer{
   background-color: #555555;
   padding: 20px 10%;
   color: #ffffff;
+}
+.fot{
+  flex-grow:1;
+  width:100%;
+  background: linear-gradient(#ffffff,  #555555);
 }
 .footer h3{
   margin: 0;
@@ -218,7 +214,7 @@ nav.greyNav #close{
 }
 h6{
   margin:1px 0;
-  font-size: 15px;
+  font-size: 35px;
   font-weight: lighter;
   font-style: italic;
 }
@@ -237,7 +233,7 @@ h6{
 }
 .accordion{
   margin: 0 5px;
-  width: 50%;
+  width: 100%;
 }
 .item{
   flex-grow: 1;
@@ -257,14 +253,53 @@ h6{
   transition: 0.2s;
 }
 .achactive{
-  height: 80px;
+  height: inherit;
   transition: 0.2s;
 }
 
+.parentflex{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-around;
+}
+.achinner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  margin:10px;
+  border-radius:10px;
+}
+.reqs{
+  width:50px;
+}
+.reqs1{
+  width:100px;
+}
+.reqs2{
+  height:100px;
+}
+.sectionhead{
+  text-align: center;
+  background-color: #522364;
+  padding:50px;
+  border-radius:10px;
+  margin-right:10px;
+  font-size: 35px;
+}
+.one{
+  height:210px;
+}
+.two{
+  height:270px;
+}
+.three{
+  height:350px;
+}
 
 .gallery-container{
-  margin-left:-50px;
-  margin-right:-50px;
+  margin-left:10px;
+  margin-right:10px;
 }
 
 .bigcontainer{
@@ -306,7 +341,7 @@ h6{
 }
 
 
-@media(min-width:701px){
+/*@media(min-width:701px){
   .dropdown:hover .dropdown-content {
     display: block;
     transition:0.5s;
@@ -364,8 +399,6 @@ h6{
   }
   .banner{
     width: 100%;
-    height: 525px;
-    object-fit:cover;
   }
   h1.title{
     font-size: 45px;
@@ -460,42 +493,7 @@ h6{
     margin: 0 2.5%;
   }
 }
-
-@media (max-width: 500px){
-  nav img{
-    height: 50px;
-    margin-left: 0;
-  }
-  nav ul{
-    width:100%;
-    top: 70px;
-    right: -100%;
-  }
-  nav ul a{
-    padding:5px 10px;
-  }
-  nav .menubtn{
-    line-height: 50px;
-    padding: 0 20px;
-  }
-  #droparrow:checked ~ .dropdown-content{
-    width:90%;
-  }
-  #droparrow2:checked ~ .dropdown-content2{
-    width:90%;
-  }
-  h1.title{
-    font-size: 35px;
-  }
-  .banner{
-    width:100%;
-    height:450px;
-  }
-  .footer{
-    flex-wrap:wrap;
-  }
-}
-
+*/
 
 
 
