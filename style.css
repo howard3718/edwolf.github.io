@@ -287,6 +287,17 @@ h6{
   margin-right:10px;
   font-size: 35px;
 }
+.button{
+  text-align: center;
+  text-decoration:none;
+  background-color: #522364;
+  padding:50px;
+  border-radius:10px;
+  width:80%;
+  margin:0 10%;
+  font-size: 35px;
+  cursor: pointer;
+}
 .one{
   height:210px;
 }
